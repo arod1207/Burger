@@ -1,0 +1,33 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "A Burger Logger",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arod1207/Burger.git"
+  },
+  "keywords": [
+    "burger",
+    "logger",
+    "mysql",
+    "express",
+    "express",
+    "handlebars"
+  ],
+  "author": "Armando Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arod1207/Burger/issues"
+  },
+  "homepage": "https://github.com/arod1207/Burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.0.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4"
+  }
+}
