@@ -1,23 +1,22 @@
 var express = require("express");
-
 var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-var cat = require("../models/burger.js");
+var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  cat.all(function(data) {
-    var hbsObject = {
-      cats: data
+  burger.all(function(data) {
+    var burgerObject = {
+      burger: data
     };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+    console.log(burgerObject);
+    res.render("index", burgerObject);
   });
 });
 
-router.post("/api/cats", function(req, res) {
-  cat.create([
+router.post("/api/burgers", function(req, res) {
+  burger.create([
     "name", "sleepy"
   ], [
     req.body.name, req.body.sleepy
@@ -27,12 +26,12 @@ router.post("/api/cats", function(req, res) {
   });
 });
 
-router.put("/api/cats/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  cat.update({
+  burrger.update({
     sleepy: req.body.sleepy
   }, condition, function(result) {
     if (result.changedRows == 0) {
