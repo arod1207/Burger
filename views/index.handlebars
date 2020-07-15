@@ -8,7 +8,7 @@
             {{this.id}}. {{this.burger_name}}
 
             <form action="PUT" method="POST">
-                <input type="hidden" name="devoured" value="false">
+                <input type="hidden" name="devoured">
                 <button class="btn btn-warning" type="submit">Eat Me!</button>
             </form>
 
@@ -28,10 +28,10 @@
 
     <h2>Add a Burger: </h2>
 
-    <form class="create-update-form" action="/" method="POST">
+    <form class="create-update-form" method="POST">
         <div class="form-group">
-            <label for="dab">Burger Name:</label>
-            <input type="text" id="dab" name="burger_name">
+            <label>Burger Name:</label>
+            <input type="text" name="burger_name">
         </div>
         <button class="btn btn-primary" type="submit">Add Burger</button>
     </form>
