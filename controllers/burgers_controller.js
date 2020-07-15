@@ -4,7 +4,7 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 
-router.get("/", function (req, res) {
+router.get("/", (req, res) => {
     burger.selectAll(function (data) {
         var burgerObject = {
             burgers: data
@@ -14,13 +14,13 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/", function (req, res) {
+router.post("/", (req, res) => {
     burger.insertOne(req.body.burger_name, function () {
         res.redirect("/");
     });
 });
 
-router.put("/:id", function (req, res) {
+router.put("/:id", (req, res) => {
     var id = req.params.id;
 
     console.log("id", id);
