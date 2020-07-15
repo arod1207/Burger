@@ -1,34 +1,42 @@
 <h1>Welcome to Good Burger</h1>
+<br>
 
-<h2>Can I take your order?!</h2>
+<div id='avail'>
+    <h2>Eat This Burger:</h2>
+    <ul>
+        {{#each burgers}} {{#unless this.devoured}}
+        <li>
+            {{this.id}}. {{this.burger_name}}
 
-<ul>
-  {{#each burgers}}
-    {{#unless sleepy}}
-      {{> burgers/burger-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="false">
+                <button class="btn btn-warning" type="submit">Eat Me!</button>
+            </form>
 
-<h2>Burger I Want to Eat!</h2>
+        </li>
+        {{/unless}} {{/each}}
+    </ul>
+</div>
+<div id='devoured'>
+    <h2>Burgers That Have Been Devoured: </h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if sleepy}}
-      {{> burgers/burger-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+    <ul>
+        {{#each burgers}} {{#if this.devoured}}
+        <li>
+            {{this.id}}. {{this.burger_name}}
+        </li>
+        {{/if}} {{/each}}
+    </ul>
+</div>
 
-<h2>Add A Burger</h2>
-<form class="create-form">
+<div id='add'>
+    <h2>Add a Burger: </h2>
 
-  <div class="form-group">
-    <label>Burger Name:</label>
-    <input type="text" id="burger-name">
-  </div>
-
-
-
-  <button class="add-burger" type="submit">Add Burger</button>
-</form>
+    <form class="create-update-form" action="/" method="POST">
+        <div class="form-group">
+            <label for="dab">Burger Name:</label>
+            <input type="text" id="dab" name="burger_name">
+        </div>
+        <button class="btn btn-primary" type="submit">Add Burger</button>
+    </form>
+</div>

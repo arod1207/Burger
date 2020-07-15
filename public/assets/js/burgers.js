@@ -9,7 +9,7 @@ $(function() {
     };
 
     // Send the PUT request.
-    $.ajax("/api/burgers/" + id, {
+    $.ajax("/api/cats/" + id, {
       type: "PUT",
       data: newSleepState
     }).then(
@@ -27,11 +27,13 @@ $(function() {
 
     var newCat = {
       burger_name: $("#ca").val().trim(),
-      devoured: $("[burger_name=devoured]:checked").val().trim()
+      devoured: $("[name=sleepy]:checked").val().trim()
     };
 
+    console.log(newCat)
+
     // Send the POST request.
-    $.ajax("/api/burgers", {
+    $.ajax("/api/cats", {
       type: "POST",
       data: newCat
     }).then(
@@ -47,7 +49,7 @@ $(function() {
     var id = $(this).data("id");
 
     // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
+    $.ajax("/api/cats/" + id, {
       type: "DELETE"
     }).then(
       function() {
