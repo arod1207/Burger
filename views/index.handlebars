@@ -1,38 +1,55 @@
 <h1>Welcome to Good Burger</h1>
 <br>
 
-    <h2>Eat This Burger:</h2>
-    <ul>
-        {{#each burgers}} {{#unless this.devoured}}
-        <li>
-            {{this.id}}. {{this.burger_name}}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <div id="left">
+                <h2>Eat This Burger:</h2>
 
-            <form action="/{{this.id}}" method="POST">
-                <input type="hidden" name="devoured">
-                <button class="btn btn-warning" type="submit">Eat Me!</button>
-            </form>        
-        </li>
-        {{/unless}} {{/each}}
-    </ul>
+                <ul>
+                    {{#each burgers}} {{#unless this.devoured}}
+                    <li>
+                        {{this.id}}. {{this.burger_name}}
 
-    <h2>Burgers That Have Been Devoured: </h2>
+                        <form action="/{{this.id}}" method="POST">
+                            <input type="hidden" name="devoured">
+                            <button class="btn btn-warning" type="submit">Eat Me!</button>
+                        </form>
+                    </li>
+                    {{/unless}} {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm">
+            <img src="assets/img/juicyburger.png">
+        </div>
 
-    <ul>
-        {{#each burgers}} {{#if this.devoured}}
-        <li>
-            {{this.id}}. {{this.burger_name}}
-        </li>
-        {{/if}} {{/each}}
-    </ul>
 
+        <div class="col-sm">
+            <div id="right">
+                <h2>Burgers That Have Been Devoured: </h2>
+
+                <ul>
+                    {{#each burgers}} {{#if this.devoured}}
+                    <li>
+                        {{this.id}}. {{this.burger_name}}
+                    </li>
+                    {{/if}} {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="center">
     <h2>Add a Burger: </h2>
 
     <form class="create-update-form" method="POST">
         <div class="form-group">
             <label>Burger Name:</label>
+            <br>
             <input type="text" name="burger_name">
         </div>
         <button class="btn btn-primary" type="submit">Add Burger</button>
     </form>
-
-
+</div>
