@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-4 d-flex justify-content-center">
             <div id="left">
                 <h2>Eat This Burger:</h2>
 
@@ -21,17 +21,17 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm">
+        <div class="col-4 d-flex justify-content-center">
             <img src="assets/img/juicyburger.png">
         </div>
 
 
-        <div class="col-sm">
+        <div class="col-4 d-flex justify-content-center">
             <div id="right">
                 <h2>Burgers That Have Been Devoured: </h2>
 
                 <ul>
-                    {{#each burgers}} {{#if this.devoured}}
+                    {{#each burgers}} <span>{{#if this.devoured}}</span>
                     <li>
                         {{this.id}}. {{this.burger_name}}
                     </li>
@@ -42,13 +42,11 @@
     </div>
 </div>
 <div id="center">
-    <h2>Add a Burger: </h2>
+    <h2>Add a Burger</h2>
 
     <form class="create-update-form" method="POST">
         <div class="form-group">
-            <label>Burger Name:</label>
-            <br>
-            <input type="text" name="burger_name">
+            <textarea name="burger_name" rows="2" cols="50"></textarea>
         </div>
         <button class="btn btn-primary" type="submit">Add Burger</button>
     </form>
