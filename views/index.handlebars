@@ -10,7 +10,7 @@
                 <ul>
                     {{#each burgers}} {{#unless this.devoured}}
                     <li>
-                        {{this.id}}. {{this.burger_name}}
+                        {{this.burger_name}}
 
                         <form action="/{{this.id}}" method="POST">
                             <input type="hidden" name="devoured">
@@ -31,9 +31,9 @@
                 <h2>Burgers That Have Been Devoured: </h2>
 
                 <ul>
-                    {{#each burgers}} <span>{{#if this.devoured}}</span>
+                    {{#each burgers}} {{#if this.devoured}}
                     <li>
-                        {{this.id}}. {{this.burger_name}}
+                        {{this.burger_name}}
                     </li>
                     {{/if}} {{/each}}
                 </ul>

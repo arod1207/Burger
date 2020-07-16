@@ -8,6 +8,20 @@ h1 {
   font-size: 200px;
 }
 
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
+li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
+
+#left {
+
+}
+
 #center {
   text-align: center;
 }
@@ -16,3 +30,4 @@ textarea {
   font-size: 24px;
   text-align: center;
 }
+
