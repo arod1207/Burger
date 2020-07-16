@@ -15,12 +15,20 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-    burger.insertOne(req.body.burger_name, function () {
+
+    if (req.body.burger_name === ''){
+      console.log('not valid')
+    } else {
+      burger.insertOne(req.body.burger_name, function () {
         res.redirect("/");
     });
+    }
+    // burger.insertOne(req.body.burger_name, function () {
+    //     res.redirect("/");
+    // });
 });
 
-router.put("/:id", (req, res) => {
+router.post("/:id", (req, res) => {
     var id = req.params.id;
 
     console.log("id", id);

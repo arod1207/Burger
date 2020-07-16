@@ -7,11 +7,13 @@
         <li>
             {{this.id}}. {{this.burger_name}}
 
-            <form action="PUT" method="POST">
+            <form action="/{{this.id}}" method="POST">
                 <input type="hidden" name="devoured">
                 <button class="btn btn-warning" type="submit">Eat Me!</button>
             </form>
 
+  
+        
         </li>
         {{/unless}} {{/each}}
     </ul>
