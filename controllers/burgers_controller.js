@@ -23,9 +23,6 @@ router.post("/", (req, res) => {
         res.redirect("/");
     });
     }
-    // burger.insertOne(req.body.burger_name, function () {
-    //     res.redirect("/");
-    // });
 });
 
 router.post("/:id", (req, res) => {
