@@ -27,10 +27,16 @@ router.post("/", (req, res) => {
 
 router.post("/:id", (req, res) => {
     var id = req.params.id;
-
     burger.updateOne(id, function () {
         res.redirect("/");
     });
 });
+
+router.post("/remove/:id", (req, res) => {
+    var id = req.params.id;
+    burger.deleteOne(id, function () {
+        res.redirect("/");
+    })
+})
 
 module.exports = router;

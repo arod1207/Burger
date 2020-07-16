@@ -16,7 +16,13 @@ var burger = {
         orm.updateOne([id], function (res) {
             cb(res);
         });
+    },
+    deleteOne: function (id, cb) {
+        orm.deleteOne([id], function (res) {
+            cb(res)
+        })
     }
+    
 };
 
 module.exports = burger;
